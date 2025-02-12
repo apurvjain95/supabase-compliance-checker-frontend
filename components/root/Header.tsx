@@ -6,7 +6,9 @@ const Header = () => {
       className="flex flex-col sticky top-0 z-[5]"
     >
       <div className="flex items-center justify-between gap-2 py-3 px-6 border-b border-border-neutral-default bg-background-neutral-default">
-        SCC
+        <span className="text-body-lg-medium font-extrabold font-jakarta">
+          SCC
+        </span>
         <div className="flex items-center gap-4">
           <UserProfileDropdown />
         </div>

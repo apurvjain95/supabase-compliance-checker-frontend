@@ -57,52 +57,51 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-surface-neutral-default relative">
-      <div className="absolute w-full h-full opacity-15 bg-[length:1.5rem_1.5rem] bg-[linear-gradient(to_right,var(--border-neutral-hovered)_1px,transparent_1px),linear-gradient(to_bottom,var(--border-neutral-hovered)_1px,transparent_1px)]" />
-      <div className="pt-32">
-        <div className="flex flex-col max-w-[25.125rem] items-center mx-auto relative z-10 bg-surface-neutral-default rounded-full p-8">
+    <div className="w-full min-h-screen flex items-center justify-center relative">
+      <div className="flex flex-col gap-4 max-w-[25.125rem] min-w-[22.5rem] items-center mx-auto relative z-10 p-8 rounded-lg bg-gray-100">
+        <span className="text-body-lg-medium font-extrabold font-jakarta">
           SCC
-          <div className="flex flex-col self-stretch gap-2">
-            <label
-              htmlFor="email-id"
-              className="text-body-sm-medium text-text-neutral-default"
-            >
-              Email
-            </label>
-            <TextField.Root
-              id="email-id"
-              className="self-stretch outline-none"
-              size="3"
-              variant="surface"
-              placeholder="Enter your email id"
-              onChange={(e) => setEmailId(e.target.value)}
-              value={emailId}
-              autoFocus
-              disabled={isLoading}
-            />
-          </div>
-          <div className="flex flex-col self-stretch gap-2">
-            <label
-              htmlFor="password"
-              className="text-body-sm-medium text-text-neutral-default"
-            >
-              Password
-            </label>
-            <TextField.Root
-              id="password"
-              className="self-stretch outline-none"
-              size="3"
-              variant="surface"
-              placeholder="Enter your password"
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-              disabled={isLoading}
-            />
-          </div>
-          <Button size="3" loading={isLoading} onClick={handleSubmit}>
-            Login
-          </Button>
+        </span>
+        <div className="flex flex-col self-stretch gap-2">
+          <label htmlFor="email-id" className="text-body-sm-medium">
+            Email
+          </label>
+          <TextField.Root
+            id="email-id"
+            className="self-stretch outline-none"
+            size="3"
+            variant="surface"
+            placeholder="Enter your email id"
+            onChange={(e) => setEmailId(e.target.value)}
+            value={emailId}
+            autoFocus
+            disabled={isLoading}
+          />
         </div>
+        <div className="flex flex-col self-stretch gap-2">
+          <label htmlFor="password" className="text-body-sm-medium">
+            Password
+          </label>
+          <TextField.Root
+            id="password"
+            type="password"
+            className="self-stretch outline-none"
+            size="3"
+            variant="surface"
+            placeholder="Enter your password"
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
+            disabled={isLoading}
+          />
+        </div>
+        <Button
+          className="cursor-pointer"
+          size="3"
+          loading={isLoading}
+          onClick={handleSubmit}
+        >
+          Login
+        </Button>
       </div>
     </div>
   );

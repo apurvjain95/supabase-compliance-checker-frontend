@@ -8,6 +8,11 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "360px",
+      md: "512px",
+      lg: "976px",
+    },
     extend: {
       fontSize: {
         "body-xs-regular": [

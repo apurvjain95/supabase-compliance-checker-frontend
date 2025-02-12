@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jakarta.variable}`}>
       <body className={`antialiased`} id="rootElement">
-        <Theme accentColor="blue" grayColor="gray">
+        <Theme accentColor="purple" grayColor="gray">
           <ToastContextProvider>
             <UserContextProvider>{children}</UserContextProvider>
           </ToastContextProvider>
