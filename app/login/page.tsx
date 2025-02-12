@@ -6,11 +6,13 @@ import { validateEmail } from "@/utils/validators";
 import { Button, TextField } from "@radix-ui/themes";
 import { useContext, useState } from "react";
 import { useRouter } from "next/navigation";
+import { UserContext } from "@/context/UserContext";
 const LoginPage = () => {
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { openToast } = useContext(ToastContext);
+  const { fetchUserData } = useContext(UserContext);
   const router = useRouter();
 
   const loginUser = async () => {
@@ -39,6 +41,7 @@ const LoginPage = () => {
           message: "Login successful",
           type: "success",
         });
+        await fetchUserData();
         router.push("/compliance");
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
